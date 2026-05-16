@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.imcys.bilibilias.data.repository.AppSettingsRepository
 import com.imcys.bilibilias.data.repository.VideoInfoRepository
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.network.ApiStatus
 import com.imcys.bilibilias.network.config.BROWSER_USER_AGENT
 import kotlinx.coroutines.Dispatchers
@@ -149,7 +149,6 @@ class LineConfigViewModel(
                     "User-Agent",
                     when (platformType) {
                         AppSettings.VideoParsePlatform.Mobile,
-                        AppSettings.VideoParsePlatform.UNRECOGNIZED,
                         AppSettings.VideoParsePlatform.Web ->  BROWSER_USER_AGENT
                         AppSettings.VideoParsePlatform.TV -> "Mozilla/5.0"
                     }

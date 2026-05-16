@@ -39,7 +39,7 @@ import com.imcys.bilibilias.R
 import com.imcys.bilibilias.database.entity.download.FileNamePlaceholder
 import com.imcys.bilibilias.database.entity.download.donghuaNamingRules
 import com.imcys.bilibilias.database.entity.download.videoNamingRules
-import com.imcys.bilibilias.datastore.AppSettingsSerializer
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.ui.weight.ASTopAppBar
 import com.imcys.bilibilias.ui.weight.AsBackIconButton
 import com.imcys.bilibilias.ui.weight.BILIBILIASTopAppBarStyle
@@ -283,5 +283,4 @@ fun NamingConventionScaffold(
     ) {
         content(it)
     }
-
 }

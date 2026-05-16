@@ -73,6 +73,7 @@ import com.imcys.bilibilias.common.event.ToastEvent
 import com.imcys.bilibilias.common.event.loginErrorChannel
 import com.imcys.bilibilias.common.event.toastEventFlow
 import com.imcys.bilibilias.common.event.sendToastEventOnBlocking
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.datastore.AppSettings.AgreePrivacyPolicyState.Agreed
 import com.imcys.bilibilias.datastore.AppSettings.AgreePrivacyPolicyState.Refuse
 import com.imcys.bilibilias.navigation.BILIBILAISNavDisplay

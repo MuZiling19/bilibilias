@@ -42,7 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.imcys.bilibilias.R
 import com.imcys.bilibilias.data.model.download.DownloadViewInfo
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.network.ApiStatus
 import com.imcys.bilibilias.network.NetWorkResult
 import com.imcys.bilibilias.network.model.app.AppOldCommonBean

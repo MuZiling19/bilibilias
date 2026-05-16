@@ -9,7 +9,7 @@ import com.imcys.bilibilias.data.repository.AppSettingsRepository
 import com.imcys.bilibilias.data.repository.DownloadTaskRepository
 import com.imcys.bilibilias.database.entity.download.DownloadSegment
 import com.imcys.bilibilias.database.entity.download.DownloadState
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.download.NewDownloadManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow

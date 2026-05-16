@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.res.stringResource
 import com.imcys.bilibilias.R
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import kotlin.math.ceil
 
 private const val PAGE_SIZE = 12

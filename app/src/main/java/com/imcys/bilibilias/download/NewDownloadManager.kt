@@ -22,6 +22,7 @@ import com.imcys.bilibilias.data.model.video.ASLinkResultType
 import com.imcys.bilibilias.data.repository.AppSettingsRepository
 import com.imcys.bilibilias.data.repository.DownloadTaskRepository
 import com.imcys.bilibilias.data.repository.VideoInfoRepository
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.database.entity.download.DownloadMode
 import com.imcys.bilibilias.database.entity.download.DownloadSegment
 import com.imcys.bilibilias.database.entity.download.DownloadStage
@@ -973,6 +974,5 @@ class NewDownloadManager(
             .maxConcurrentDownloads
             .coerceAtLeast(DEFAULT_MAX_CONCURRENT_DOWNLOADS)
     }
-
 
 }

@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalHapticFeedback
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.ui.weight.ASIconButton
 
 typealias OnUpdateEpisodeListMode = (AppSettings.EpisodeListMode) -> Unit
@@ -60,7 +60,6 @@ fun ASEpisodeTitle(
             }
         ) {
             when (episodeListMode) {
-                AppSettings.EpisodeListMode.UNRECOGNIZED,
                 AppSettings.EpisodeListMode.EpisodeListMode_Grid -> {
                     Icon(
                         Icons.Outlined.Apps,

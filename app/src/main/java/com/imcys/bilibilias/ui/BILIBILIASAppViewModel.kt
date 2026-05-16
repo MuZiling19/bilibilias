@@ -7,7 +7,7 @@ import com.google.firebase.app
 import com.imcys.bilibilias.data.repository.AppSettingsRepository
 import com.imcys.bilibilias.data.repository.QRCodeLoginRepository
 import com.imcys.bilibilias.data.repository.UserInfoRepository
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.datastore.source.UsersDataSource
 import com.imcys.bilibilias.network.ApiStatus
 import com.imcys.bilibilias.network.AsCookiesStorage

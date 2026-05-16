@@ -24,7 +24,7 @@ import com.imcys.bilibilias.data.repository.VideoInfoRepository
 import com.imcys.bilibilias.database.entity.BILIUsersEntity
 import com.imcys.bilibilias.database.entity.download.DownloadMode
 import com.imcys.bilibilias.database.entity.download.MediaContainer
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.datastore.source.UsersDataSource
 import com.imcys.bilibilias.download.NewDownloadManager
 import com.imcys.bilibilias.network.ApiStatus

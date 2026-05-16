@@ -103,6 +103,14 @@ ABI：
 ./gradlew :app:compileAlphaDebugKotlin
 ```
 
+构建 `core` 下 iOS 可导入 `XCFramework` 并汇总到统一目录：
+
+```bash
+./gradlew collectCoreIosArtifacts
+```
+
+详细说明见 [iOS 导入产物](./ios-artifacts.md)。
+
 ## 签名
 
 `official` 和 `beta` flavor 使用名为 `BILIBILIASSigningConfig` 的 signing config，但仓库内没有硬编码 keystore。release 签名需要由本地或 CI 注入。

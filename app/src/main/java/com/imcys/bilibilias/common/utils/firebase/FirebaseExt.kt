@@ -8,7 +8,7 @@ import com.google.firebase.analytics.ParametersBuilder
 import com.google.firebase.analytics.analytics
 import com.google.firebase.analytics.logEvent
 import com.imcys.bilibilias.common.utils.analyticsSafe
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 
 object FirebaseExt {
     fun logLogin(method: String) {

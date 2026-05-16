@@ -13,7 +13,7 @@ import com.imcys.bilibilias.data.repository.AppSettingsRepository
 import com.imcys.bilibilias.data.repository.QRCodeLoginRepository
 import com.imcys.bilibilias.data.repository.RiskManagementRepository
 import com.imcys.bilibilias.database.entity.BILIUsersEntity
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.datastore.AppSettingsSerializer
 import com.imcys.bilibilias.datastore.source.UsersDataSource
 import com.imcys.bilibilias.download.NewDownloadManager

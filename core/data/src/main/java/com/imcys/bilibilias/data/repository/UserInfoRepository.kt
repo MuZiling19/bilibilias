@@ -47,7 +47,7 @@ class UserInfoRepository(
             webApiService.getRelationStat(mid),
         ) { result1, result2 ->
             BILIUserStatModel(result1, result2)
-        }.flowOn(Dispatchers.IO)
+        }.flowOn(Dispatchers.Default)
     }
 
     suspend fun getBILIUserByUid(userId: Long? = null) =

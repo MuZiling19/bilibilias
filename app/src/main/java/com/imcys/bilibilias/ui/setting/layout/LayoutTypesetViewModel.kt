@@ -3,7 +3,7 @@ package com.imcys.bilibilias.ui.setting.layout
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.imcys.bilibilias.data.repository.AppSettingsRepository
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -43,7 +43,7 @@ class LayoutTypesetViewModel(
         val currentList = _homeLayoutTypesetList.value.toMutableList()
         val index = currentList.indexOf(item)
         if (index != -1) {
-            val newItem = item.toBuilder().setIsHidden(hidden).build()
+            val newItem = item.copy(is_hidden = hidden)
             currentList[index] = newItem
             _homeLayoutTypesetList.value = currentList
             viewModelScope.launch {

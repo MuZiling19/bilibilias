@@ -6,6 +6,7 @@ import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.imcys.bilibilias.data.repository.AppSettingsRepository
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.download.FfmpegRuntimeConfig
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.MutableStateFlow

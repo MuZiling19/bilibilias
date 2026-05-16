@@ -40,7 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation3.runtime.NavKey
 import com.imcys.bilibilias.data.repository.getDescription
 import com.imcys.bilibilias.database.entity.BILIUsersEntity
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.ui.weight.ASAsyncImage
 import com.imcys.bilibilias.ui.weight.ASTopAppBar
 import com.imcys.bilibilias.ui.weight.AsBackIconButton
@@ -52,6 +52,7 @@ import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
 import java.text.SimpleDateFormat
 import java.util.Locale
+import androidx.compose.ui.platform.LocalLocale
 
 @Serializable
 object ParsePlatformRoute : NavKey
@@ -161,7 +162,7 @@ private fun PlatformAccountCard(user: BILIUsersEntity, onClick: () -> Unit) {
                 )
                 Text(
                     text = "登录于 ${
-                        SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                        SimpleDateFormat("yyyy-MM-dd", LocalLocale.current.platformLocale)
                             .format(user.createdAt)
                     }",
                     style = MaterialTheme.typography.bodySmall,

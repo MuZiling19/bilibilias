@@ -51,6 +51,12 @@ gradlePlugin {
             version = "unspecified"
         }
 
+        register("multiplatformKoin") {
+            id = libs.plugins.bilibilias.multiplatform.koin.get().pluginId
+            implementationClass = "MultiplatformKoinConventionPlugin"
+            version = "unspecified"
+        }
+
         register("ffmpegVerification"){
             id = libs.plugins.bilibilias.android.ffmpegVerification.get().pluginId
             implementationClass = "FFmpegVerificationConventionPlugin"
@@ -66,6 +72,12 @@ gradlePlugin {
         register("jvmLibrary"){
             id = libs.plugins.bilibilias.jvm.library.get().pluginId
             implementationClass = "JvmLibraryConventionPlugin"
+            version = "unspecified"
+        }
+
+        register("multiplatformLibrary") {
+            id = libs.plugins.bilibilias.multiplatform.library.get().pluginId
+            implementationClass = "MultiplatformLibraryConventionPlugin"
             version = "unspecified"
         }
 

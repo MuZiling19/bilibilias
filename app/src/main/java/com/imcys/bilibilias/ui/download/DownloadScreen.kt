@@ -59,7 +59,7 @@ import com.imcys.bilibilias.R
 import com.imcys.bilibilias.common.event.sendToastEvent
 import com.imcys.bilibilias.common.event.sendToastEventOnBlocking
 import com.imcys.bilibilias.database.entity.download.DownloadSegment
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.ui.download.navigation.DownloadRoute
 import com.imcys.bilibilias.ui.weight.ASTextButton
 import com.imcys.bilibilias.ui.weight.ASTopAppBar
@@ -327,7 +327,6 @@ private fun PageChangeTools(
                     onDismissRequest = { showSortMenu = false }
                 ) {
                     AppSettings.DownloadSortType.entries
-                        .filter { it != AppSettings.DownloadSortType.UNRECOGNIZED }
                         .forEach { sortType ->
                             DropdownMenuItem(
                                 text = { Text(getSortTypeDisplayName(sortType)) },

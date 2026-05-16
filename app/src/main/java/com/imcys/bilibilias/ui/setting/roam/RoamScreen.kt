@@ -57,7 +57,7 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.imcys.bilibilias.common.event.sendToastEvent
 import com.imcys.bilibilias.database.entity.LoginPlatform
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.network.model.app.AppOldApplyRoamBean
 import com.imcys.bilibilias.ui.utils.switchHapticFeedback
 import com.imcys.bilibilias.ui.weight.ASCheckThumbSwitch

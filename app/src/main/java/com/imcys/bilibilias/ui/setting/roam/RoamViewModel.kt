@@ -2,7 +2,7 @@ package com.imcys.bilibilias.ui.setting.roam
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.protobuf.copy
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.BuildConfig
 import com.imcys.bilibilias.data.repository.AppSettingsRepository
 import com.imcys.bilibilias.data.repository.UserInfoRepository

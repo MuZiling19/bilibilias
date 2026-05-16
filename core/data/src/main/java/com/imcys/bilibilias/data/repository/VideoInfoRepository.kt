@@ -3,7 +3,7 @@ package com.imcys.bilibilias.data.repository
 import com.imcys.bilibilias.database.dao.BILIUserCookiesDao
 import com.imcys.bilibilias.database.dao.BILIUsersDao
 import com.imcys.bilibilias.database.entity.LoginPlatform
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.datastore.source.UsersDataSource
 import com.imcys.bilibilias.network.ApiStatus
 import com.imcys.bilibilias.network.FlowNetWorkResult
@@ -58,8 +58,7 @@ class VideoInfoRepository(
             .firstOrNull { cookie -> cookie.name == "bili_jct" }?.value
         return when (platformType) {
             AppSettings.VideoParsePlatform.Web,
-            AppSettings.VideoParsePlatform.Mobile,
-            AppSettings.VideoParsePlatform.UNRECOGNIZED -> {
+            AppSettings.VideoParsePlatform.Mobile -> {
                 webApiService.getDonghuaOgvPlayerInfo(epId, seasonId, qn = qn, fnval = fnval, csrf = cookieCsrf)
                     .flatMapConcat { ogvInfoResult ->
                         val check =
@@ -189,7 +188,6 @@ class VideoInfoRepository(
         val tryLook = if (usersDataSource.isLogin()) null else "1"
         return when (platformType) {
             AppSettings.VideoParsePlatform.Mobile,
-            AppSettings.VideoParsePlatform.UNRECOGNIZED,
             AppSettings.VideoParsePlatform.Web -> {
                 webApiService.getVideoPlayerInfo(
                     cid,

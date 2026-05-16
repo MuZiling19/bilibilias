@@ -2,7 +2,6 @@ package com.imcys.bilibilias.ui.tools.parser
 
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
-import com.google.protobuf.copy
 import com.imcys.bilibilias.network.AsCookiesStorage
 import io.ktor.http.Cookie
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -145,6 +145,7 @@ if (!enabledPlayAppMode.toBoolean() && enabledAnalytics.toBoolean()) {
 
 dependencies {
     implementation(project(":core:common"))
+    implementation(project(":core:ui"))
     implementation(project(":core:data"))
 
     implementation(libs.ffmpeg.kit.x6kb)

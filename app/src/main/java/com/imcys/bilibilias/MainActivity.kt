@@ -34,7 +34,7 @@ import com.imcys.bilibilias.common.update.GooglePlayAppUpdateManage
 import com.imcys.bilibilias.common.utils.Manufacturers.XIAOMI
 import com.imcys.bilibilias.common.utils.createDownloadNotificationChannel
 import com.imcys.bilibilias.data.repository.AppSettingsRepository
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.ui.BILIBILIASAppScreen
 import com.imcys.bilibilias.ui.theme.BILIBILIASTheme
 import kotlinx.coroutines.Dispatchers

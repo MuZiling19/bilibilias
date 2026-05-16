@@ -66,7 +66,7 @@ import com.baidu.mobstat.StatService
 import com.imcys.bilibilias.BuildConfig
 import com.imcys.bilibilias.R
 import com.imcys.bilibilias.common.utils.openLink
-import com.imcys.bilibilias.datastore.AppSettings
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.datastore.AppSettings.AgreePrivacyPolicyState.Agreed
 import com.imcys.bilibilias.datastore.AppSettings.AgreePrivacyPolicyState.Refuse
 import com.imcys.bilibilias.network.ApiStatus

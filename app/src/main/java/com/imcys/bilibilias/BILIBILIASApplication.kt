@@ -8,9 +8,9 @@ import com.imcys.bilibilias.agent.functions.BILIAnalysisAppFunctions
 import com.imcys.bilibilias.common.data.CommonBuildConfig
 import com.imcys.bilibilias.common.memory.FairMemoryReceiver
 import com.imcys.bilibilias.common.shizuku.ShizukuStateManager
-import com.imcys.bilibilias.common.utils.StorageUtil.getKoin
 import com.imcys.bilibilias.common.utils.baiduAnalyticsSafe
 import com.imcys.bilibilias.data.repository.AppSettingsRepository
+import com.imcys.bilibilias.datastore.*
 import com.imcys.bilibilias.data.di.repositoryModule
 import com.imcys.bilibilias.database.di.databaseModule
 import com.imcys.bilibilias.datastore.di.dataStoreModule
@@ -23,6 +23,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -139,5 +140,6 @@ class BILIBILIASApplication : Application(), AppFunctionConfiguration.Provider {
     private fun initBuildConfig() {
         CommonBuildConfig.enabledAnalytics = BuildConfig.ENABLED_ANALYTICS
         CommonBuildConfig.gitCommitHash = BuildConfig.GIT_COMMIT_HASH
+        CommonBuildConfig.enabledNetworkLogging = BuildConfig.DEBUG
     }
 }

@@ -1,13 +1,8 @@
 package com.imcys.bilibilias.di
 
-import androidx.datastore.core.DataStore
-import androidx.datastore.core.DataStoreFactory
-import androidx.datastore.dataStoreFile
 import com.imcys.bilibilias.agent.functions.BILIAnalysisAppFunctions
 import com.imcys.bilibilias.common.shizuku.ShizukuStateManager
 import com.imcys.bilibilias.common.utils.firebase.FirebaseNetworkPerformanceTracer
-import com.imcys.bilibilias.datastore.AppSettings
-import com.imcys.bilibilias.datastore.AppSettingsSerializer
 import com.imcys.bilibilias.download.DownloadExecutor
 import com.imcys.bilibilias.download.DownloadManager
 import com.imcys.bilibilias.download.FfmpegMerger
@@ -16,6 +11,8 @@ import com.imcys.bilibilias.download.NamingConventionHandler
 import com.imcys.bilibilias.download.NewDownloadManager
 import com.imcys.bilibilias.download.SubtitleDownloader
 import com.imcys.bilibilias.download.VideoInfoFetcher
+import com.imcys.bilibilias.network.config.BILIBILI_URL
+import com.imcys.bilibilias.network.config.REFERER
 import com.imcys.bilibilias.ui.BILIBILIASAppViewModel
 import com.imcys.bilibilias.ui.analysis.AnalysisViewModel
 import com.imcys.bilibilias.ui.download.DownloadViewModel
@@ -50,6 +47,8 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
+import okhttp3.OkHttpClient
+import java.util.concurrent.TimeUnit
 
 
 val appModule = module {
@@ -58,10 +57,20 @@ val appModule = module {
     single<NetworkPerformanceTracer> {
         FirebaseNetworkPerformanceTracer()
     }
-    single<DataStore<AppSettings>> {
-        DataStoreFactory.create(AppSettingsSerializer) {
-            androidContext().dataStoreFile("app_setting.pb")
-        }
+    single {
+        OkHttpClient.Builder()
+            .pingInterval(1, TimeUnit.SECONDS)
+            .addInterceptor { chain ->
+                val request = chain.request().newBuilder()
+                    .apply {
+                        if (chain.request().headers("Referer").isEmpty()) {
+                            header(REFERER, BILIBILI_URL)
+                        }
+                    }
+                    .build()
+                chain.proceed(request)
+            }
+            .build()
     }
     viewModelOf(::HomeViewModel)
     viewModelOf(::QRCodeLoginViewModel)

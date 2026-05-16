@@ -1,8 +1,6 @@
 package com.imcys.bilibilias.data.repository
 
-import android.util.Log
 import com.imcys.bilibilias.data.model.BILILoginUserModel
-import com.imcys.bilibilias.network.utils.WebiTokenUtils
 import com.imcys.bilibilias.database.dao.BILIUserCookiesDao
 import com.imcys.bilibilias.database.dao.BILIUsersDao
 import com.imcys.bilibilias.database.entity.BILIUserCookiesEntity
@@ -14,6 +12,7 @@ import com.imcys.bilibilias.network.model.QRCodeInfo
 import com.imcys.bilibilias.network.model.QRCodePollInfo
 import com.imcys.bilibilias.network.service.BILIBILITVAPIService
 import com.imcys.bilibilias.network.service.BILIBILIWebAPIService
+import com.imcys.bilibilias.network.utils.WebiTokenUtils
 import kotlinx.coroutines.flow.map
 
 class QRCodeLoginRepository(
@@ -49,7 +48,6 @@ class QRCodeLoginRepository(
         return when (loginPlatform) {
             LoginPlatform.WEB -> webApiService.qrcodePoll(qrcodeKey).map { networkResult ->
                 networkResult.mapData { tvQRCodeInfo, apiResponse ->
-                    Log.d("networkResult", "getLoginQRCodeInfo: ${apiResponse?.responseHeader}")
                     tvQRCodeInfo
                 }
             }
