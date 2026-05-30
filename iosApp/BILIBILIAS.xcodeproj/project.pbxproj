@@ -156,7 +156,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\ncd \"$SRCROOT/..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n";
+			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\ncd \"$SRCROOT/..\"\nCOMPOSE_IOS_RESOURCES_ARCHS=\"$ARCHS\"\nif [ \"$PLATFORM_NAME\" = \"iphonesimulator\" ] && echo \"$ARCHS\" | grep -q \"x86_64\"; then\n  COMPOSE_IOS_RESOURCES_ARCHS=\"arm64\"\nfi\n./gradlew :shared:embedAndSignAppleFrameworkForXcode -Pcompose.ios.resources.platform=\"$PLATFORM_NAME\" -Pcompose.ios.resources.archs=\"$COMPOSE_IOS_RESOURCES_ARCHS\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -305,6 +305,7 @@
 				DEVELOPMENT_TEAM = "${TEAM_ID}";
 				DEVELOPMENT_ASSET_PATHS = "\"BILIBILIAS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BILIBILIAS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -340,6 +341,7 @@
 				DEVELOPMENT_TEAM = "${TEAM_ID}";
 				DEVELOPMENT_ASSET_PATHS = "\"BILIBILIAS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BILIBILIAS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
